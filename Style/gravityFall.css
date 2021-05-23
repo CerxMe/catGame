@@ -1,0 +1,154 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+* *:before *:after {
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+  display: block;
+}
+#gameContainer {
+  min-height: 100%;
+  height: 100%;
+  background: #23a6d5;
+}
+.interfaceLayer {
+  z-index: 2;
+  position: absolute;
+  overflow: hidden;
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+}
+.interface {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#startGameScreen.interface {
+  background: rgba(1,1,1,0.5);
+}
+#startGameScreen.interface .legend {
+  text-align: center;
+  padding: 50px;
+  color: #fff;
+}
+#gameInterface {
+  justify-content: flex-end;
+}
+#gameInterface .scoreContainer {
+  padding: 10px;
+  background: rgba(1,1,1,0.3);
+  color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: space-between;
+  font-size: 2em;
+}
+#gameInterface .score,
+#gameInterface #health {
+  padding: 10px;
+}
+#endGameScreen.interface {
+  background: rgba(1,1,1,0.8);
+}
+#endGameScreen.interface .legend {
+  text-align: center;
+  padding: 50px;
+  color: #fff;
+}
+#endGameScreen.interface .score {
+  color: #ee7752;
+}
+.hidden {
+  display: none;
+}
+.playerLayer {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+.playerLayer #player {
+  position: relative;
+  top: 20px;
+  left: 45%;
+  width: 10vw;
+  height: 10vw;
+  background: url("../pic/cat.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+}
+.playerLayer .direction {
+  transform: scaleX(-1);
+}
+.backgroundLayer {
+  z-index: 0;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.backgroundLayer .obstacles {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100%;
+  width: 100%;
+  border-left: 5px dashed #ee7752;
+  border-right: 5px dashed #ee7752;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.obstacleRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.obstacleRow div {
+  height: 60px;
+  flex-grow: 1;
+}
+.obstacleRow .obstacle {
+  background: #ee7752;
+}
+.obstacleRow .collided {
+  background: #f00;
+}
+.btn {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.cta-btn {
+  font-size: 1.1rem;
+  background-color: #fff;
+  padding: 0.9rem 1.8rem;
+  color: var(--body-font-color);
+/* border-radius: .4rem; */
+  transition: background-color 0.5s;
+}
+.cta-btn:hover,
+.cta-btn:focus {
+  color: #fff;
+  background-color: #000;
+  cursor: pointer;
+}

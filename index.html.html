@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gravity Fall</title>
+  <!-- Use CSS -->
+  <link rel="stylesheet" href="Style/gravityFall.css">
+</head>
+<body>
+  <!-- This renders the game -->
+  <div id="gameContainer">
+    <!-- game UI is drawn over all game elements -->
+    <div class="interfaceLayer">
+      <div id="startGameScreen" class="interface">
+        <!-- game controls explained -->
+        <div  class="legend">
+          <h1>
+            Use arrow keys to move
+          </h1>
+          <h2>
+            Hold spacebar to dash
+          </h2>
+        </div>
+        <!-- start game button -->
+        <button class="btn cta-btn" id="startGame"> Start Game </button>
+      </div>
+      <div id="gameInterface" class="interface hidden">
+        <div class="scoreContainer">
+          <div id="health">
+            9 Lives
+          </div>
+          <div class="score">
+            0 Score
+          </div>
+        </div>
+      </div>
+      <div id="endGameScreen" class="interface hidden">
+        <div class="legend">
+          <h1>Game Over</h1>
+          <h2><div class="score">
+            0 Score
+          </div></h2>
+        </div>
+        <button class="btn cta-btn" id="restartGame"> Play Again </button>
+      </div>
+    </div>
+    <!-- player and background split into 2 layers -->
+    <div class="playerLayer">
+      <div id="player"></div>
+    </div>
+    <!-- the backround layer gets populated by Javascript when the game loads -->
+    <div class="backgroundLayer">
+      <div class="obstacles">
+
+      </div>
+      <div class="obstacles">
+      </div>
+    </div>
+  </div>
+  <!-- Use JS to run the game -->
+  <script src="js/GravityFall.js"></script>
+</body>
